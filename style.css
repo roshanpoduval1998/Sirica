@@ -1,10 +1,10 @@
 body{margin: 0;overflow: hidden;}
 
-header {display:flex;width:100%; background-color: #fffefa;box-shadow: 0px 1px, 1px 0px white; font-family: cursive;text-decoration:none;}
+header {display:flex;width:100%; background-color: #fffefa;box-shadow: 0px 1px, 1px 0px white; font-family: monospace;text-decoration:none;}
 
 header div{width:50%;}
 
-header #title{width:30%; font-size:5vh;padding-left:1vw;}
+header #title{width:30%; font-size:5vh;padding-left:1vw;font-family:cursive}
 
 #menu {display:flex;}
 
