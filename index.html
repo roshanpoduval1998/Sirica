@@ -1,20 +1,27 @@
 <html>
 <title>Sirica Style Speaks</title>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" href="https://cdn.icon-icons.com/icons2/472/PNG/48/bmw-48_45238.png" type="image/icon type">
 </head>
 <body>
-	<header>
-		<img src="https://img.icons8.com/office/40/000000/logo.png"/>
-		<span id="title">Sirica<sup>Style Speaks</sup></span>
-		<input type="text" placeholder="Search"></input>
-		<a>Messaging</a>
-		<a>Notification</a>
-		<a>Profile</a>
+	<header id="main_header" class="main_header">
+		<div>
+		<span id="title">Sirica<br><i>Style Speaks</i></span><br><br>
+		<div id="tentative_section">
+			<a>Profile</a>
+			<a>Entertainment</a>
+		</div>
+		</div><br>
+		<div id="menu"><a>Products</a>
+		<a onclick="return notify_open('order','open')">My Orders</a>
+		<a onclick="return notify_open('trynow','open')">Try Now</a>
+		<a onclick="return notify_open('notify','open')">Notification</a>
+		<a onclick="return notify_open('contact','open')">Contact Us</a></div>
 	</header>
-	<div id="main_lay">
+	<div id="main_lay" onclick="notify_open('closure','close')">
 		<section id="still_1">
 			<section id="profile_blog">
 			</section>
@@ -26,9 +33,10 @@
 		<section id="still_2">
 			<section id="stores">
 			</section>
-			<section id="contact us">
-			</section>
 		</section>
+	</div>
+	<div id="notify">
+		<header><a onclick="notify_open('closure','close')">x</a></header>
 	</div>
 </body>
 </html>
