@@ -12,58 +12,30 @@ class load_feed{
 	load_feeddata(){
 		for (var key in database){
 			var initial = `<br>
-			<img align="center" style="height:70%;width:80%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1GrmoOXmkii2winJ8Kijobedz5gRCPcDvQ&usqp=CAU"/>
-			<table style="width:100%" align="center">
-				<tr>
-					<td style="word-break: break-all;width:100%;border:1px solid black;">
-						${key}
-					</td>
-				</tr>
-				<tr>
-					<td style="word-break: break-all;width:100%;border:1px solid black;">
-						${database[key]}
-					</td>
-				</tr>
-			</table><br>`
+			<div style="display: flex; box-shadow: 0px 2px 0px 0px black;background-color:#faf7f0; padding:10px;">
+				<div align="center" style="height:70%;width:100%;float:center;">
+					<img style="width:50%; height:95%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1GrmoOXmkii2winJ8Kijobedz5gRCPcDvQ&usqp=CAU"/>
+				</div>
+				<table style="width:50%;" align="center">
+					<tr>
+						<td style="word-break: break-all;width:100%;border:1px solid black;">
+							Cloth Type - ${key}
+						</td>
+					</tr>
+					<tr>
+						<td style="word-break: break-all;width:100%;border:1px solid black;">
+							Price - 10$<br>
+							Discount - 5%<br>
+							Description - ${database[key]}<br>
+
+						</td>
+					</tr>
+				</table><br>
+			</div><br>`
 			this.template += initial;
 		};
 		return this.template;
 	};
-}
-
-class profile{
-	constructor(photo, name, description){
-	this.photo = photo;
-	this.name = name;
-	this.description = description;
-	}
-	profile_call(){
-		var data_fil = `
-		<img width=100% src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1GrmoOXmkii2winJ8Kijobedz5gRCPcDvQ&usqp=CAU" />
-		<a>${this.name}</a>
-		<p>${this.description}</p>
-		`
-		return data_fil;
-	}
-}
-
-class option_right {
-	constructor(block, header, value){
-		this.block = block;
-		this.header = header;
-		this.value = value;
-		this.template = ``;
-	}
-	option_call() {
-		for(var i=0;i<=this.block;i++){
-			var data_fil = `<br>
-			<a>${this.header}</a>
-			<p>${this.value}</p><br>
-			`
-			this.template += data_fil;
-		}
-		return this.template;
-	}
 }
 
 function notify_open(notifyorder,openclose){
@@ -78,19 +50,8 @@ function notify_open(notifyorder,openclose){
 
 window.onload = (event) => {
 	document.getElementById("notify").style.visibility = "hidden";
-	
 	let webcall = new load_feed(database);
 	var get_table = document.getElementById("move_1");
 	console.log(webcall.load_feeddata());
 	get_table.innerHTML = webcall.load_feeddata();
-	
-	let profil_call = new profile("","Roshan","Poduval");
-	var get_profile_section = document.getElementById("profile_blog");
-	console.log(profil_call.profile_call());
-	get_profile_section.innerHTML = profil_call.profile_call();
-	
-	let optn_call = new option_right(0,"Roshan","Poduval");
-	var get_option_section = document.getElementById("stores");
-	console.log(optn_call.option_call());
-	get_option_section.innerHTML = optn_call.option_call();
 }

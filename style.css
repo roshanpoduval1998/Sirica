@@ -1,6 +1,8 @@
+@media screen and (max-width: 500px) {#feed_box{display:block;}}
+
 body{margin: 0;overflow: hidden;}
 
-header {display:flex;width:100%; background-color: #fffefa;box-shadow: 0px 1px, 1px 0px white; font-family: monospace;text-decoration:none;}
+header {display:flex;width:100%; background-color: #454745;box-shadow: 0px 1px, 1px 0px red; font-family: monospace;text-decoration:none;color:white;}
 
 header div{width:50%;}
 
@@ -18,30 +20,12 @@ header div a:Hover{border: 1px solid gray;}
 
 #main_lay{width:100%;display: flex;}
 
-#still_1 {
-	background-color: white;
-	width:20%;
-	height: 80vh;
-	padding: 1vw;
-	margin-top: 1px;
-	border-radius: 10px;
-}
-
-#still_1 section{
-	display: block; 
-	height:96%;
-	box-shadow:1px 1px 1px 1px darkgray;
-	margin:5px;
-	border-radius: 5px;
-	padding-top:5px;
-}
-
 #move_1{
 	background-color: #f7f7f5;
-	width:60%;
+	width:100%;
 	height:85vh;
 	overflow: scroll;
-	margin:5px;
+	margin:10px;
 	overflow-x: hidden;
 	padding:2%;
 }
@@ -58,23 +42,6 @@ header div a:Hover{border: 1px solid gray;}
 ::-webkit-scrollbar-track {box-shadow: inset 0 0 5px white;border-radius: 4px;}
 ::-webkit-scrollbar-thumb {background: azure;border-radius: 4px;border:1px solid grey}
 
-#still_2 {
-	background-color: white;
-	width:20%;
-	height: 80vh;
-	padding: 1vw;
-	margin-top: 1px;
-	border-radius: 10px;
-}
-
-#still_2 section{
-	display: block; 
-	height:96%;
-	box-shadow:1px 1px 1px 1px darkgray;
-	margin:5px;
-	border-radius: 5px;
-}
-
 #notify{
 	right:0;
 	bottom:0;
@@ -85,24 +52,25 @@ header div a:Hover{border: 1px solid gray;}
 	border-radius: 5px;
 }
 
-#notify header a{width:1vw;padding: 2px;cursor:pointer}
+#notify header a{width:1vw;padding: 2px;cursor:pointer; font-size:3vh;}
 
-@media screen and (max-width: 600px) {
-	
+@media screen and (max-width: 500px) {
+		
 	#main_header{height:25vh;}
 	
 	#menu{display:block;}
 	#menu a{display:block;width:100%;font-size:3vw}
 	#title{font-size:3vw;}
 	
-	#tentative_section{display:block}
+	#tentative_section{display:flex;}
 	#tentative_section a{display:block;width:100%;font-size:3vw;padding: 10px;cursor: pointer;margin:2px;}
 	
 	#breadcrumbs{display:block;font-size:5vh;width:10%; text-align:center}
 	#breadcrumbs:Hover{border:1px solid gray;}
 	
-	#still_1, #still_2{display:none;}
 	#move_1{margin:1px;width:100%;justify:center;}
+	
 	#notify {width:70%}
 	#notify a{font-size: 3vh;}
+	#move_1 div{display:block}
 }
